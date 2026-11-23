@@ -4,198 +4,525 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Educational tourism website about Thakhek, Khammouane, Laos.">
-    <title>That Muang Kao | Thakhek Travel</title>
 
-    <link rel="stylesheet" href="style.css">
+    <title>That Sikhottabong | Laos Tourism</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, "Noto Sans Lao", sans-serif;
+            background: #f5f5ef;
+            color: #263d30;
+        }
+
+        header {
+            background: #173c2b;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 19px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #d9b76b;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #d9b76b;
+        }
+
+        .language button {
+            padding: 8px 13px;
+            border: 1px solid #d9b76b;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .language button.active {
+            background: #d9b76b;
+            color: #173c2b;
+        }
+
+        .hero {
+            min-height: 570px;
+            background:
+                linear-gradient(
+                    rgba(12, 43, 29, 0.82),
+                    rgba(12, 43, 29, 0.75)
+                );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 70px 20px;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero-label {
+            color: #e2c47d;
+            letter-spacing: 4px;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(35px, 6vw, 65px);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .hero p {
+            color: #e1e8df;
+            line-height: 2;
+            font-size: 16px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 25px;
+            background: #d9b76b;
+            color: #173c2b;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title small {
+            color: #b18c43;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .section-title h2 {
+            margin-top: 12px;
+            font-size: 32px;
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-art {
+            min-height: 330px;
+            background: linear-gradient(145deg, #d8c58e, #315b40);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .about-art .symbol {
+            font-size: 100px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .about-text h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #66766a;
+            line-height: 2;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .location {
+            background: #e9eee5;
+        }
+
+        .location-info {
+            max-width: 750px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .location-info p {
+            line-height: 2.2;
+            margin-bottom: 10px;
+        }
+
+        .map-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 13px 22px;
+            background: #214b34;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .map-button:hover {
+            background: #d0ad62;
+            color: #173c2b;
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 350px;
+            border: 0;
+            border-radius: 8px;
+            margin-top: 25px;
+        }
+
+        .education {
+            background: #173c2b;
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        .education h2 {
+            color: #e0c27c;
+            margin-bottom: 15px;
+        }
+
+        .education p {
+            line-height: 2;
+            color: #dce6dc;
+        }
+
+        footer {
+            background: #10291d;
+            color: #c4d0c5;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+            line-height: 2;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 7%;
+            }
+
+            .hero {
+                min-height: 500px;
+            }
+
+            .section-title h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header class="navbar">
-    <a href="#home" class="logo">THAT MUANG KAO<span>.</span></a>
-
-    <nav id="navMenu">
-        <a href="#home" data-i18n="navHome">ໜ້າຫຼັກ</a>
-        <a href="#about" data-i18n="navAbout">ກ່ຽວກັບ</a>
-        <a href="#destinations" data-i18n="navPlaces">ສະຖານທີ່</a>
-        <a href="#gallery" data-i18n="navGallery">ຮູບພາບ</a>
-        <a href="#contact" data-i18n="navContact">ຕິດຕໍ່</a>
-    </nav>
-
-    <div class="language-switch">
-        <button id="laBtn" class="lang-btn active">LA</button>
-        <span>|</span>
-        <button id="enBtn" class="lang-btn">EN</button>
-    </div>
-
-    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
-</header>
-
-<!-- HERO -->
-
-<section class="hero" id="home">
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content">
-        <p class="eyebrow" data-i18n="heroEyebrow">
-            DISCOVER KHAMMOUANE
-        </p>
-
-        <h1 data-i18n="heroTitle">
-            ພຣະທາດ<br>ເມືອງເກົ່າ
-        </h1>
-
-        <p class="hero-description" data-i18n="heroDescription">
-            ຄົ້ນພົບຄວາມງາມ ວັດທະນະທຳ
-            ແລະ ປະຫວັດສາດແຫ່ງເມືອງທ່າແຂກ.
-        </p>
-
-        <a href="#destinations" class="main-btn" data-i18n="explore">
-            ຄົ້ນພົບສະຖານທີ່ →
-        </a>
-    </div>
-
-    <div class="hero-bottom">
-        THAKHEK · KHAMMOUANE · LAOS
-    </div>
-</section>
-
-<!-- ABOUT -->
-
-<section class="section about" id="about">
-    <div class="section-tag">01 — ABOUT</div>
-
-    <div class="about-grid">
-        <div class="about-image">
-            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=1000"
-                 alt="Asian temple architecture">
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            LAOS <span>TOURISM.</span>
         </div>
 
-        <div class="about-content">
-            <p class="eyebrow">WELCOME TO THAKHEK</p>
+        <nav>
+            <a href="#home" data-la="ໜ້າຫຼັກ" data-en="Home">ໜ້າຫຼັກ</a>
+            <a href="#about" data-la="ຂໍ້ມູນ" data-en="About">ຂໍ້ມູນ</a>
+            <a href="#location" data-la="ຕຳແໜ່ງ" data-en="Location">ຕຳແໜ່ງ</a>
+        </nav>
 
-            <h2 data-i18n="aboutTitle">
-                ຄວາມງາມທີ່ມີເລື່ອງລາວ
+        <div class="language">
+            <button id="laBtn" class="active">LA</button>
+            <button id="enBtn">EN</button>
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+
+            <div class="hero-label">
+                DISCOVER LAOS
+            </div>
+
+            <h1 data-la="ພຣະທາດສີໂຄດຕະບອງ"
+                data-en="That Sikhottabong">
+                ພຣະທາດສີໂຄດຕະບອງ
+            </h1>
+
+            <p data-la="ສະຖານທີ່ສຳຄັນທາງພຸດທະສາສະໜາ ແລະ ມໍລະດົກທາງວັດທະນະທຳ ໃນແຂວງຄຳມ່ວນ."
+               data-en="An important Buddhist monument and cultural heritage site in Khammouane Province.">
+                ສະຖານທີ່ສຳຄັນທາງພຸດທະສາສະໜາ
+                ແລະ ມໍລະດົກທາງວັດທະນະທຳ
+                ໃນແຂວງຄຳມ່ວນ.
+            </p>
+
+            <a href="#about" class="hero-button"
+               data-la="ອ່ານຂໍ້ມູນເພີ່ມເຕີມ"
+               data-en="Explore More">
+                ອ່ານຂໍ້ມູນເພີ່ມເຕີມ
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <div class="section-title">
+            <small>ABOUT THE PLACE</small>
+            <h2 data-la="ກ່ຽວກັບສະຖານທີ່"
+                data-en="About This Place">
+                ກ່ຽວກັບສະຖານທີ່
             </h2>
-
-            <p data-i18n="aboutText">
-                ເມືອງທ່າແຂກ ເປັນເມືອງເອກ
-                ຂອງແຂວງຄຳມ່ວນ ທີ່ມີຄວາມໂດດເດັ່ນ
-                ດ້ານວັດທະນະທຳ ສະຖາປັດຕະຍະກຳ
-                ແລະ ທຳມະຊາດ.
-            </p>
-
-            <p data-i18n="aboutText2">
-                ເວັບໄຊທ໌ນີ້ຈັດທຳຂຶ້ນເພື່ອແນະນຳ
-                ແລະ ເຜີຍແຜ່ຂໍ້ມູນແຫຼ່ງທ່ອງທ່ຽວ
-                ໃຫ້ຜູ້ສົນໃຈໄດ້ຮຽນຮູ້.
-            </p>
         </div>
-    </div>
-</section>
 
-<!-- DESTINATIONS -->
+        <div class="about">
 
-<section class="section destinations" id="destinations">
+            <div class="about-art">
+                <div>
+                    <span class="symbol">☸</span>
+                    <h2>THAT SIKHOTTABONG</h2>
+                    <p>KHAMMOUANE · LAOS</p>
+                </div>
+            </div>
 
-    <div class="section-tag">02 — DESTINATIONS</div>
+            <div class="about-text">
 
-    <div class="section-heading">
-        <p class="eyebrow" data-i18n="destinationEyebrow">EXPLORE THE CITY</p>
-        <h2 data-i18n="destinationTitle">ແຫຼ່ງທ່ອງທ່ຽວ</h2>
-        <p data-i18n="destinationSubtitle">
-            ຄົ້ນພົບສະຖານທີ່ສຳຄັນໃນເມືອງທ່າແຂກ
-        </p>
-    </div>
+                <h2 data-la="ມໍລະດົກແຫ່ງຄຳມ່ວນ"
+                    data-en="Heritage of Khammouane">
+                    ມໍລະດົກແຫ່ງຄຳມ່ວນ
+                </h2>
 
-    <div class="search-box">
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="ຄົ້ນຫາສະຖານທີ່..."
-        >
-        <span>⌕</span>
-    </div>
+                <p data-la="ພຣະທາດສີໂຄດຕະບອງ ຕັ້ງຢູ່ແຄມແມ່ນ້ຳຂອງ ທາງທິດໃຕ້ຂອງເມືອງທ່າແຂກ ແຂວງຄຳມ່ວນ ປະເທດລາວ. ເປັນປູຊະນີຍະສະຖານທີ່ສຳຄັນຂອງຊາວພຸດ ແລະ ເປັນໜຶ່ງໃນສະຖານທີ່ສັກສິດທີ່ມີຊື່ສຽງໃນລາວ."
+                   data-en="That Sikhottabong is located along the Mekong River, south of Thakhek in Khammouane Province, Laos. It is an important Buddhist monument and one of the country's well-known sacred sites.">
+                    ພຣະທາດສີໂຄດຕະບອງ ຕັ້ງຢູ່ແຄມແມ່ນ້ຳຂອງ
+                    ທາງທິດໃຕ້ຂອງເມືອງທ່າແຂກ
+                    ແຂວງຄຳມ່ວນ ປະເທດລາວ.
+                    ເປັນປູຊະນີຍະສະຖານທີ່ສຳຄັນຂອງຊາວພຸດ
+                    ແລະ ເປັນໜຶ່ງໃນສະຖານທີ່ສັກສິດທີ່ມີຊື່ສຽງໃນລາວ.
+                </p>
 
-    <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all" data-i18n="filterAll">ທັງໝົດ</button>
-        <button class="filter-btn" data-filter="culture" data-i18n="filterCulture">ວັດທະນະທຳ</button>
-        <button class="filter-btn" data-filter="nature" data-i18n="filterNature">ທຳມະຊາດ</button>
-        <button class="filter-btn" data-filter="history" data-i18n="filterHistory">ປະຫວັດສາດ</button>
-    </div>
+                <p data-la="ອົງພຣະທາດມີຄວາມສູງປະມານ 29 ແມັດ ແລະ ໄດ້ຮັບການບູລະນະໃນສະຕະວັດທີ 16 ໃນສະໄໝພະເຈົ້າໄຊເສດຖາທິລາດ."
+                   data-en="The stupa is approximately 29 metres high and was restored in the 16th century during the reign of King Setthathirath.">
+                    ອົງພຣະທາດມີຄວາມສູງປະມານ 29 ແມັດ
+                    ແລະ ໄດ້ຮັບການບູລະນະໃນສະຕະວັດທີ 16
+                    ໃນສະໄໝພະເຈົ້າໄຊເສດຖາທິລາດ.
+                </p>
 
-    <div class="destination-grid" id="destinationGrid"></div>
+            </div>
+        </div>
+    </section>
 
-    <p class="educational-note" data-i18n="educationalNote">
-        ໝາຍເຫດ: ເວັບໄຊທ໌ນີ້ສ້າງຂຶ້ນ
-        ເພື່ອຈຸດປະສົງດ້ານການສຶກສາເທົ່ານັ້ນ.
-    </p>
-</section>
 
-<!-- GALLERY -->
+    <!-- LOCATION -->
+    <section class="location" id="location">
 
-<section class="section gallery" id="gallery">
-    <div class="section-tag">03 — GALLERY</div>
+        <div class="section-title">
+            <small>LOCATION & GPS</small>
+            <h2 data-la="ຕຳແໜ່ງທີ່ຕັ້ງ"
+                data-en="Location">
+                ຕຳແໜ່ງທີ່ຕັ້ງ
+            </h2>
+        </div>
 
-    <div class="section-heading">
-        <p class="eyebrow">BEAUTIFUL MOMENTS</p>
-        <h2 data-i18n="galleryTitle">ຮູບພາບຄວາມປະທັບໃຈ</h2>
-    </div>
+        <div class="location-info">
 
-    <div class="gallery-grid">
-        <img src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?w=900" alt="Temple">
-        <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=900" alt="Nature">
-        <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=900" alt="Landscape">
-    </div>
-</section>
+            <p>
+                <strong data-la="ສະຖານທີ່:"
+                       data-en="Place:">ສະຖານທີ່:</strong>
+                <span data-la="ພຣະທາດສີໂຄດຕະບອງ"
+                      data-en="That Sikhottabong">
+                    ພຣະທາດສີໂຄດຕະບອງ
+                </span>
+            </p>
 
-<!-- LOCATION -->
+            <p>
+                <strong data-la="ເມືອງ:"
+                       data-en="District:">ເມືອງ:</strong>
+                <span data-la="ທ່າແຂກ"
+                      data-en="Thakhek">
+                    ທ່າແຂກ
+                </span>
+            </p>
 
-<section class="location" id="contact">
-    <div class="location-content">
-        <p class="eyebrow">VISIT THAKHEK</p>
+            <p>
+                <strong data-la="ແຂວງ:"
+                       data-en="Province:">ແຂວງ:</strong>
+                <span data-la="ຄຳມ່ວນ"
+                      data-en="Khammouane">
+                    ຄຳມ່ວນ
+                </span>
+            </p>
 
-        <h2 data-i18n="locationTitle">
-            ມາຄົ້ນພົບຄຳມ່ວນ
+            <p>
+                <strong data-la="ປະເທດ:"
+                       data-en="Country:">ປະເທດ:</strong>
+                <span data-la="ສປປ ລາວ"
+                      data-en="Lao PDR">
+                    ສປປ ລາວ
+                </span>
+            </p>
+
+            <p>
+                <strong>GPS:</strong>
+                17.435982, 104.740497
+            </p>
+
+            <a
+                class="map-button"
+                href="https://www.google.com/maps/search/?api=1&query=17.435982,104.740497"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-la="ເປີດ Google Maps ↗"
+                data-en="Open Google Maps ↗">
+                ເປີດ Google Maps ↗
+            </a>
+
+            <iframe
+                class="map-frame"
+                src="https://maps.google.com/maps?q=17.435982,104.740497&z=15&output=embed"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+    </section>
+
+
+    <!-- EDUCATIONAL PURPOSE -->
+    <section class="education">
+
+        <h2 data-la="ຈັດທຳເພື່ອການສຶກສາ"
+            data-en="Educational Purpose">
+            ຈັດທຳເພື່ອການສຶກສາ
         </h2>
 
-        <p data-i18n="locationText">
-            ເມືອງທ່າແຂກ · ແຂວງຄຳມ່ວນ · ສປປ ລາວ
+        <p data-la="ເວັບໄຊທ໌ນີ້ສ້າງຂຶ້ນເພື່ອຈຸດປະສົງດ້ານການສຶກສາເທົ່ານັ້ນ ເພື່ອແນະນຳຂໍ້ມູນ ແລະ ເຜີຍແຜ່ແຫຼ່ງທ່ອງທ່ຽວໃນປະເທດລາວ."
+           data-en="This website was created for educational purposes only, to present information and introduce tourist attractions in Laos.">
+            ເວັບໄຊທ໌ນີ້ສ້າງຂຶ້ນເພື່ອຈຸດປະສົງດ້ານການສຶກສາເທົ່ານັ້ນ
+            ເພື່ອແນະນຳຂໍ້ມູນ ແລະ ເຜີຍແຜ່ແຫຼ່ງທ່ອງທ່ຽວໃນປະເທດລາວ.
         </p>
 
-        <a href="https://www.google.com/maps/search/?api=1&query=Thakhek+Khammouane+Laos"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="main-btn"
-           data-i18n="mapButton">
-            ເປີດ Google Maps ↗
-        </a>
-    </div>
-</section>
+    </section>
 
-<!-- FOOTER -->
 
-<footer>
-    <h3>THAT MUANG KAO.</h3>
+    <!-- FOOTER -->
+    <footer>
+        <p>LAOS TOURISM | THAT SIKHOTTABONG</p>
+        <p>© 2026 Educational Project</p>
+    </footer>
 
-    <p data-i18n="footerText">
-        ເວັບໄຊທ໌ແນະນຳແຫຼ່ງທ່ອງທ່ຽວ
-        ເມືອງທ່າແຂກ.
-    </p>
 
-    <p class="copyright" data-i18n="copyright">
-        © 2026 Educational Project. All Rights Reserved.
-    </p>
-</footer>
+    <!-- JAVASCRIPT -->
+    <script>
+        const laBtn = document.getElementById("laBtn");
+        const enBtn = document.getElementById("enBtn");
 
-<button id="topBtn">↑</button>
+        function changeLanguage(language) {
 
-<script src="script.js"></script>
+            const elements = document.querySelectorAll("[data-la]");
+
+            elements.forEach(function(element) {
+
+                if (language === "la") {
+                    element.textContent = element.dataset.la;
+                } else {
+                    element.textContent = element.dataset.en;
+                }
+
+            });
+
+            document.documentElement.lang =
+                language === "la" ? "lo" : "en";
+
+            laBtn.classList.toggle("active", language === "la");
+            enBtn.classList.toggle("active", language === "en");
+
+            localStorage.setItem("siteLanguage", language);
+        }
+
+        laBtn.addEventListener("click", function() {
+            changeLanguage("la");
+        });
+
+        enBtn.addEventListener("click", function() {
+            changeLanguage("en");
+        });
+
+        const savedLanguage =
+            localStorage.getItem("siteLanguage") || "la";
+
+        changeLanguage(savedLanguage);
+    </script>
 
 </body>
 </html>
