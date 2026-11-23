@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Educational tourism website about Thakhek, Khammouane, Laos.">
+    <title>That Muang Kao | Thakhek Travel</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="navbar">
+    <a href="#home" class="logo">THAT MUANG KAO<span>.</span></a>
+
+    <nav id="navMenu">
+        <a href="#home" data-i18n="navHome">ໜ້າຫຼັກ</a>
+        <a href="#about" data-i18n="navAbout">ກ່ຽວກັບ</a>
+        <a href="#destinations" data-i18n="navPlaces">ສະຖານທີ່</a>
+        <a href="#gallery" data-i18n="navGallery">ຮູບພາບ</a>
+        <a href="#contact" data-i18n="navContact">ຕິດຕໍ່</a>
+    </nav>
+
+    <div class="language-switch">
+        <button id="laBtn" class="lang-btn active">LA</button>
+        <span>|</span>
+        <button id="enBtn" class="lang-btn">EN</button>
+    </div>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <p class="eyebrow" data-i18n="heroEyebrow">
+            DISCOVER KHAMMOUANE
+        </p>
+
+        <h1 data-i18n="heroTitle">
+            ພຣະທາດ<br>ເມືອງເກົ່າ
+        </h1>
+
+        <p class="hero-description" data-i18n="heroDescription">
+            ຄົ້ນພົບຄວາມງາມ ວັດທະນະທຳ
+            ແລະ ປະຫວັດສາດແຫ່ງເມືອງທ່າແຂກ.
+        </p>
+
+        <a href="#destinations" class="main-btn" data-i18n="explore">
+            ຄົ້ນພົບສະຖານທີ່ →
+        </a>
+    </div>
+
+    <div class="hero-bottom">
+        THAKHEK · KHAMMOUANE · LAOS
+    </div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="section about" id="about">
+    <div class="section-tag">01 — ABOUT</div>
+
+    <div class="about-grid">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=1000"
+                 alt="Asian temple architecture">
+        </div>
+
+        <div class="about-content">
+            <p class="eyebrow">WELCOME TO THAKHEK</p>
+
+            <h2 data-i18n="aboutTitle">
+                ຄວາມງາມທີ່ມີເລື່ອງລາວ
+            </h2>
+
+            <p data-i18n="aboutText">
+                ເມືອງທ່າແຂກ ເປັນເມືອງເອກ
+                ຂອງແຂວງຄຳມ່ວນ ທີ່ມີຄວາມໂດດເດັ່ນ
+                ດ້ານວັດທະນະທຳ ສະຖາປັດຕະຍະກຳ
+                ແລະ ທຳມະຊາດ.
+            </p>
+
+            <p data-i18n="aboutText2">
+                ເວັບໄຊທ໌ນີ້ຈັດທຳຂຶ້ນເພື່ອແນະນຳ
+                ແລະ ເຜີຍແຜ່ຂໍ້ມູນແຫຼ່ງທ່ອງທ່ຽວ
+                ໃຫ້ຜູ້ສົນໃຈໄດ້ຮຽນຮູ້.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- DESTINATIONS -->
+
+<section class="section destinations" id="destinations">
+
+    <div class="section-tag">02 — DESTINATIONS</div>
+
+    <div class="section-heading">
+        <p class="eyebrow" data-i18n="destinationEyebrow">EXPLORE THE CITY</p>
+        <h2 data-i18n="destinationTitle">ແຫຼ່ງທ່ອງທ່ຽວ</h2>
+        <p data-i18n="destinationSubtitle">
+            ຄົ້ນພົບສະຖານທີ່ສຳຄັນໃນເມືອງທ່າແຂກ
+        </p>
+    </div>
+
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="ຄົ້ນຫາສະຖານທີ່..."
+        >
+        <span>⌕</span>
+    </div>
+
+    <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all" data-i18n="filterAll">ທັງໝົດ</button>
+        <button class="filter-btn" data-filter="culture" data-i18n="filterCulture">ວັດທະນະທຳ</button>
+        <button class="filter-btn" data-filter="nature" data-i18n="filterNature">ທຳມະຊາດ</button>
+        <button class="filter-btn" data-filter="history" data-i18n="filterHistory">ປະຫວັດສາດ</button>
+    </div>
+
+    <div class="destination-grid" id="destinationGrid"></div>
+
+    <p class="educational-note" data-i18n="educationalNote">
+        ໝາຍເຫດ: ເວັບໄຊທ໌ນີ້ສ້າງຂຶ້ນ
+        ເພື່ອຈຸດປະສົງດ້ານການສຶກສາເທົ່ານັ້ນ.
+    </p>
+</section>
+
+<!-- GALLERY -->
+
+<section class="section gallery" id="gallery">
+    <div class="section-tag">03 — GALLERY</div>
+
+    <div class="section-heading">
+        <p class="eyebrow">BEAUTIFUL MOMENTS</p>
+        <h2 data-i18n="galleryTitle">ຮູບພາບຄວາມປະທັບໃຈ</h2>
+    </div>
+
+    <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?w=900" alt="Temple">
+        <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=900" alt="Nature">
+        <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=900" alt="Landscape">
+    </div>
+</section>
+
+<!-- LOCATION -->
+
+<section class="location" id="contact">
+    <div class="location-content">
+        <p class="eyebrow">VISIT THAKHEK</p>
+
+        <h2 data-i18n="locationTitle">
+            ມາຄົ້ນພົບຄຳມ່ວນ
+        </h2>
+
+        <p data-i18n="locationText">
+            ເມືອງທ່າແຂກ · ແຂວງຄຳມ່ວນ · ສປປ ລາວ
+        </p>
+
+        <a href="https://www.google.com/maps/search/?api=1&query=Thakhek+Khammouane+Laos"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="main-btn"
+           data-i18n="mapButton">
+            ເປີດ Google Maps ↗
+        </a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <h3>THAT MUANG KAO.</h3>
+
+    <p data-i18n="footerText">
+        ເວັບໄຊທ໌ແນະນຳແຫຼ່ງທ່ອງທ່ຽວ
+        ເມືອງທ່າແຂກ.
+    </p>
+
+    <p class="copyright" data-i18n="copyright">
+        © 2026 Educational Project. All Rights Reserved.
+    </p>
+</footer>
+
+<button id="topBtn">↑</button>
+
+<script src="script.js"></script>
+
+</body>
+</html>
